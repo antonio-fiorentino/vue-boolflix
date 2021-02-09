@@ -3,3 +3,40 @@
   margin:0;
   box-sizing: border-box;
 }
+
+#root{
+  margin: auto;
+  width: 1200px;
+}
+
+.search-bar{
+  height: 100px;
+  width: 100%;
+  background-color: lightgrey;
+  display: flex;
+  align-items: center;
+  padding: 0px 15px;
+  justify-content: space-between;
+}
+
+h1{
+  font-size: 50px;
+  color: red;
+}
+
+input{
+  width: 500px;
+  height: 50px;
+  padding: 0px 15px;
+  font-size: 20px;
+  background-color: #fff;
+  border-color: red;
+}
+
+button{
+  border-radius: 5px;
+  margin-left: 10px;
+  height: 30px;
+  padding: 0px 5px;
+  border-color : red;
+}
