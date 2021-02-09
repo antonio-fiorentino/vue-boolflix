@@ -22,6 +22,19 @@
 
       </div>
 
+      <div class="central-container">
+
+        <div class="movie" v-for="item in film">
+
+          <h2>{{item.title}}</h2>
+          <h3>{{item.original_title}}</h3>
+          <h3>{{item.original_language}}</h3>
+          <h3>{{item.vote_average}}</h3>
+
+        </div>
+
+      </div>
+
     </div>
 
     <script src="js/script.js" charset="utf-8"></script>

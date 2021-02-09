@@ -14,20 +14,22 @@ var app = new Vue({
   film:[],
   searchFilm: ''
  },
- mounted() {
-   const self = this;
-   let resultFilm = axios.get('https://api.themoviedb.org/3/search/movie?api_key=3cb3d116da9f170df8a3aa2687a762ed&language=it-IT&query=' + self.searchFilm)
-
- },
+ // mounted() {
+ //   const self = this;
+ //
+ // },
  methods:{
    movie: function () {
      if (this.searchFilm === '') {
        alert('Error 404: Inserire testo')
      }else {
-       this.film.push(this.searchFilm);
+       const self = this
+       axios.get('https://api.themoviedb.org/3/search/movie?api_key=3cb3d116da9f170df8a3aa2687a762ed&language=it-IT&query=' + self.searchFilm).then(function(resp){
+         self.film = resp.data.results
+         console.log(self.film);
+       })
 
      }
-     console.log(this.resultFilm);
      this.searchFilm= '';
    },
  }
