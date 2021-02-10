@@ -14,10 +14,6 @@ var app = new Vue({
   film:[],
   searchFilm: ''
  },
- // mounted() {
- //   const self = this;
- //
- // },
  methods:{
    movie: function () {
      if (this.searchFilm === '') {
