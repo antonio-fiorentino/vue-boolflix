@@ -23,6 +23,7 @@ var app = new Vue({
          console.log(self.serieTv);
 
        })
+     }
 
      this.search= '';
    },
@@ -31,7 +32,6 @@ var app = new Vue({
      return parseInt(vote / 2);
    },
 
- }
 },
 });
 Vue.config.devtools = true
