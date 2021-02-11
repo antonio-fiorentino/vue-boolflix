@@ -3,7 +3,8 @@ var app = new Vue({
  data:{
   film:[],
   serieTv:[],
-  search: ''
+  search: '',
+  flags:['en', 'it']
  },
 
  methods:{
