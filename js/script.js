@@ -1,5 +1,3 @@
-
-
 var app = new Vue({
  el: '#root',
  data:{
@@ -33,6 +31,6 @@ var app = new Vue({
    },
 
  }
- }
+},
 });
 Vue.config.devtools = true
