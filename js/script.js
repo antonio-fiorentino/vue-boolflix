@@ -1,8 +1,6 @@
 var app = new Vue({
  el: '#root',
  data:{
-  // film:[],
-  // serieTv:[],
   filmAndSeries:[],
   search: '',
   flags:['en', 'it', 'de', 'fr', 'es', 'pt', 'zh']
@@ -28,12 +26,6 @@ var app = new Vue({
      this.search= '';
    },
 
-   // print: function(){
-   //   let resultSearch = [...this.film,...this.serieTv]
-   //   this.filmAndSeries.push(resultSearch)
-   //   console.log(this.filmAndSeries);
-
-   // },
 
    starVote(vote) {
      return parseInt(vote / 2);
