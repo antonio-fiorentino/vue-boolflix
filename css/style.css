@@ -5,8 +5,7 @@
 }
 
 #root{
-  margin: auto;
-  width: 1200px;
+  width: 100vw;
 }
 
 .search-bar{
@@ -17,6 +16,7 @@
   align-items: center;
   padding: 0px 15px;
   justify-content: space-between;
+  margin-right:  30px;
 }
 
 h1{
@@ -43,17 +43,14 @@ button{
 
 .central-container{
   margin: 25px 0px;
-  display: flex;
-  justify-content: center;
 }
 
 .movie{
   background-color: red;
-  width: 400px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin:20px;
+  width: 10%;
+  height: 300px;
+  display: inline-block;
 }
 
 .flag{

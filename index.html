@@ -25,12 +25,12 @@
 
       <div class="central-container">
 
-        <div class="movie" v-for="item in film">
+        <div class="movie" v-for="item in filmAndSeries">
 
-          <h2>Titolo: {{item.title}}</h2>
-          <h3>Titolo originale: {{item.original_title}}</h3>
-          <i class="fas fa-star stars" v-for="index in starVote(item.vote_average)"></i>
-          <i class="far fa-star stars" v-for="index in (5 - starVote(item.vote_average))"></i>
+          <h2>Titolo: {{item.title}} {{item.original_name}}</h2>
+          <h3>Titolo originale: {{item.original_title}} {{item.original_name}}</h3>
+          <span>Voto: <i class="fas fa-star stars" v-for="index in starVote(item.vote_average)"></i><i class="far fa-star stars" v-for="index in (5 - starVote(item.vote_average))"></i></span>
+
           <img class="flag" v-if="flags.includes(item.original_language)"
               :src="'img/' + item.original_language + '.png'">
           <h3>{{item.original_language}}</h3>
