@@ -3,7 +3,7 @@ var app = new Vue({
  data:{
   filmAndSeries:[],
   search: '',
-  flags:['en', 'it', 'de', 'fr', 'es', 'pt', 'zh']
+  flags:['en', 'it', 'de', 'fr', 'es', 'pt', 'zh', 'ja']
  },
 
  methods:{

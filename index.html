@@ -28,13 +28,13 @@
         <div class="movie" v-for="item in filmAndSeries">
 
           <!-- <img :src="https://image.tmdb.org/t/p/w342 + {{item.poster_path}}" alt=""> -->
-          <h2>Titolo: {{item.title}} {{item.original_name}}</h2>
-          <h3>Titolo originale: {{item.original_title}} {{item.original_name}}</h3>
+          <h4>Titolo: {{item.title}} {{item.original_name}}</h4>
+          <h4>Titolo originale: {{item.original_title}} {{item.original_name}}</h4>
           <span>Voto: <i class="fas fa-star stars" v-for="index in starVote(item.vote_average)"></i><i class="far fa-star stars" v-for="index in (5 - starVote(item.vote_average))"></i></span>
 
           <img class="flag" v-if="flags.includes(item.original_language)"
               :src="'img/' + item.original_language + '.png'">
-          <h3>{{item.original_language}}</h3>
+          <h4>{{item.original_language}}</h4>
 
         </div>
 
