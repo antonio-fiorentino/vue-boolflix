@@ -7,6 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
 
@@ -15,6 +17,14 @@
       <div class="search-bar">
         <div class="title">
           <h1>Boolflix</h1>
+          <ul>
+            <li>Home</li>
+            <li>Serie Tv</li>
+            <li>Film</li>
+            <li>Originali</li>
+            <li>Aggiunti di recente</li>
+            <li>La mia lista</li>
+          </ul>
         </div>
         <div class="search-input">
           <input type="text" placeholder="Cerca un film" v-model='search' v-on:keyup.enter="movie">
@@ -25,16 +35,22 @@
 
       <div class="central-container">
 
-        <div class="movie" v-for="item in filmAndSeries">
+        <div class="movie" @mouseover="mouseOver = true" @mouseover="mouseOver = false" v-for="item in filmAndSeries">
 
-          <!-- <img :src="https://image.tmdb.org/t/p/w342 + {{item.poster_path}}" alt=""> -->
-          <h4>Titolo: {{item.title}} {{item.original_name}}</h4>
-          <h4>Titolo originale: {{item.original_title}} {{item.original_name}}</h4>
-          <span>Voto: <i class="fas fa-star stars" v-for="index in starVote(item.vote_average)"></i><i class="far fa-star stars" v-for="index in (5 - starVote(item.vote_average))"></i></span>
+          <img class="poster" v-if="item.poster_path" :src="getPosterSrc(item)">
+          <img class="poster" v-else src="img/poster.png">
 
-          <img class="flag" v-if="flags.includes(item.original_language)"
-              :src="'img/' + item.original_language + '.png'">
-          <h4>{{item.original_language}}</h4>
+
+          <div class="none" v-show="active">
+            <h4>Titolo: {{item.title}} {{item.original_name}}</h4>
+            <h4>Titolo originale: {{item.original_title}} {{item.original_name}}</h4>
+            <div>Voto: <i class="fas fa-star stars" v-for="index in starVote(item.vote_average)"></i><i class="far fa-star stars" v-for="index in (5 - starVote(item.vote_average))"></i></div>
+
+            <div>Lingua: <img class="flag" v-if="flags.includes(item.original_language)"
+                :src="'img/' + item.original_language + '.png'">{{item.original_language}}
+            </div>
+
+          </div>
 
         </div>
 
