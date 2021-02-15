@@ -4,7 +4,8 @@ var app = new Vue({
   filmAndSeries:[],
   search: '',
   flags:['en', 'it', 'de', 'fr', 'es', 'pt', 'zh', 'ja', 'ru'],
-  active: false
+  active: false,
+  deactivate: true
  },
 
  methods:{
@@ -36,6 +37,7 @@ var app = new Vue({
 
    mouseOver: function(){
      this.active = !this.active;
+     this.deactivate = !this.deactivate;
    }
 
 },

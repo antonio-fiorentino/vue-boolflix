@@ -35,10 +35,10 @@
 
       <div class="central-container">
 
-        <div class="movie" @mouseover="mouseOver = true" @mouseover="mouseOver = false" v-for="item in filmAndSeries">
+        <div class="movie" @mouseover="mouseOver" v-for="item in filmAndSeries">
 
-          <img class="poster" v-if="item.poster_path" :src="getPosterSrc(item)">
-          <img class="poster" v-else src="img/poster.png">
+          <img class="poster" v-show="deactivate" v-if="item.poster_path" :src="getPosterSrc(item)">
+          <img class="poster" v-show="deactivate" v-else src="img/poster.png">
 
 
           <div class="none" v-show="active">
